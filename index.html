@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro CapCut Pro</title>
+  <meta property="og:title" content="Registro Oficial CapCut Pro | Creative Communi" />
+  <meta property="og:description" content="Plan mensual CapCut Pro a tasa BCV de hoy. Entrega en menos de 5 minutos tras confirmar tu pago." />
+  <meta property="og:image" content="https://canva-pro-registros.pages.dev/bienvenida.jfif" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://script.google.com" crossorigin />
+  <link rel="preconnect" href="https://script.googleusercontent.com" crossorigin />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --card-2: #0b1220;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #00e5ff;
+      --accent: #3b82f6;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --binance: #f3ba2f;
+      --paypal: #0070ba;
+      --warn-bg: rgba(239, 68, 68, 0.14);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body {
+      background: linear-gradient(160deg, #0b1120 0%, #111827 100%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .container {
+      width: 100%;
+      max-width: 460px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    }
+    .top-banner-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .brand-banner {
+      width: 100%;
+      max-height: 75px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 10px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 18px;
+      color: #ffffff;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0, 229, 255, 0.25);
+    }
+    .brand h1 { font-size: 18px; line-height: 1.2; }
+    .brand p { font-size: 12px; color: var(--muted); }
+    .fast-badge {
+      background: rgba(34, 197, 94, 0.16);
+      border: 1px solid rgba(34, 197, 94, 0.45);
+      color: #86efac;
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 11.5px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .bcv-bar {
+      background: rgba(0, 229, 255, 0.1);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      color: #67e8f9;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .delivery-info {
+      background: rgba(59, 130, 246, 0.14);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      color: #bfdbfe;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 12.5px;
+      line-height: 1.4;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .field { margin-bottom: 14px; }
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #e2e8f0; }
+    input {
+      width: 100%; padding: 12px 14px; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--card-2);
+      color: var(--text); font-size: 15px; outline: none;
+    }
+    input:focus { border-color: var(--primary); }
+    input:disabled { opacity: 0.6; cursor: not-allowed; }
+    .single-plan {
+      background: rgba(0, 229, 255, 0.1);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .single-plan-left strong { display: block; font-size: 14.5px; color: #fff; }
+    .single-plan-left small { display: block; font-size: 11.5px; color: #94a3b8; margin-top: 2px; }
+    .single-plan-right { text-align: right; }
+    .single-plan-right .plan-usd { font-size: 20px; font-weight: 800; color: var(--primary); display: block; line-height: 1.1; }
+    .single-plan-right .plan-bs { font-size: 12px; color: #e2e8f0; font-weight: 700; display: block; margin-top: 3px; }
+    .summary {
+      background: var(--card-2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 12px; margin: 14px 0;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12.5px;
+    }
+    .summary div span { color: var(--muted); display: block; font-size: 11px; }
+    .summary div strong { color: #fff; font-size: 13.5px; }
+    .btn {
+      width: 100%; padding: 13px; border: none; border-radius: 12px;
+      font-size: 14.5px; font-weight: 700; cursor: pointer; transition: 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 9px;
+      text-align: center;
+    }
+    .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .btn-primary { background: linear-gradient(135deg, #00c4cc, #3b82f6); color: #fff; }
+    .btn-pm { background: var(--success); color: #052e16; margin-bottom: 8px; }
+    .btn-binance { background: var(--binance); color: #1e2026; margin-bottom: 8px; }
+    .btn-paypal { background: var(--paypal); color: #ffffff; }
+    .btn-whatsapp {
+      background: #25D366; color: #052e16;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+    }
+    .btn-whatsapp-locked {
+      background: #334155;
+      color: #94a3b8;
+      border: 1px solid #475569;
+      text-decoration: none;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+    .hidden { display: none !important; }
+    .saved-box {
+      margin-top: 14px;
+      background: rgba(34, 197, 94, 0.14);
+      border: 1.5px solid var(--success);
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+    }
+    .saved-box h3 { color: #86efac; font-size: 15px; margin-bottom: 6px; }
+    .saved-box p { color: #e2e8f0; font-size: 13px; line-height: 1.45; margin-bottom: 12px; }
+    .fix-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 12px;
+      color: #94a3b8;
+      text-decoration: underline;
+    }
+    .pay-card {
+      margin-top: 14px; background: var(--card-2);
+      border: 1.5px solid var(--primary); border-radius: 14px; padding: 14px;
+    }
+    .pay-card.binance-card { border-color: var(--binance); }
+    .pay-card.paypal-card { border-color: var(--paypal); }
+    .pay-title {
+      font-size: 15px; font-weight: 800; margin-bottom: 10px;
+      color: var(--primary); display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .pay-title svg { width: 20px; height: 20px; }
+    .binance-card .pay-title { color: var(--binance); }
+    .paypal-card .pay-title { color: #38bdf8; }
+    .copy-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 10px; background: var(--card); border-radius: 10px;
+      margin-bottom: 8px; border: 1px solid var(--border); gap: 8px;
+    }
+    .copy-row small { color: var(--muted); display: block; font-size: 11px; }
+    .copy-row strong { font-size: 14px; color: #fff; word-break: break-all; }
+    .copy-btn {
+      background: #334155; color: #fff; border: none; border-radius: 8px;
+      padding: 7px 11px; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap;
+    }
+    .copy-btn.copied { background: var(--success); color: #052e16; }
+    .copy-all-btn {
+      width: 100%; background: rgba(0, 229, 255, 0.14); color: var(--primary);
+      border: 1px solid var(--primary); border-radius: 10px; padding: 10px;
+      font-size: 13px; font-weight: 700; cursor: pointer; margin: 4px 0 12px;
+    }
+    .warning-box {
+      background: var(--warn-bg); border: 1.5px solid var(--danger);
+      color: #fecaca; border-radius: 12px; padding: 11px;
+      font-size: 12.5px; font-weight: 700; text-align: center;
+      margin-bottom: 12px; line-height: 1.4;
+    }
+    label.upload-box {
+      display: block;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.75);
+      border: 2px dashed #64748b;
+      border-radius: 12px;
+      padding: 14px 12px;
+      text-align: center;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: 0.2s;
+    }
+    label.upload-box:active { transform: scale(0.99); }
+    label.upload-box.has-file {
+      border-style: solid;
+      border-color: var(--success);
+      background: rgba(34, 197, 94, 0.1);
+    }
+    label.upload-box.need-file {
+      border-color: var(--danger);
+      background: rgba(239, 68, 68, 0.12);
+    }
+    .upload-empty-icon { font-size: 26px; display: block; margin-bottom: 4px; }
+    .upload-empty strong { display: block; font-size: 13.5px; color: #f8fafc; margin-bottom: 3px; }
+    .upload-empty small { display: block; font-size: 11.5px; color: #94a3b8; font-weight: 500; }
+    .upload-preview {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+    .upload-preview img {
+      width: 58px;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1.5px solid var(--success);
+      background: #0f172a;
+      flex-shrink: 0;
+    }
+    .upload-ok-text strong { display: block; font-size: 13.5px; color: #86efac; margin-bottom: 2px; }
+    .upload-ok-text small { display: block; font-size: 11.5px; color: #cbd5e1; font-weight: 500; line-height: 1.3; }
+    .upload-err {
+      color: #fca5a5;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-align: center;
+      margin: -4px 0 10px;
+    }
+    .wa-note {
+      display: block;
+      text-align: center;
+      font-size: 11.5px;
+      color: #86efac;
+      margin-top: 8px;
+      line-height: 1.35;
+    }
+    .error-msg {
+      color: #fca5a5; font-size: 13px; margin-bottom: 10px;
+      text-align: center; font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-banner-wrap">
+      <img src="bienvenida.jfif" alt="Creative Communi" class="brand-banner" />
+    </div>
+
+    <div class="header">
+      <div class="brand">
+        <div class="logo">CC</div>
+        <div>
+          <h1>Registro CapCut Pro</h1>
+          <p>Completa tus datos para adquirir tu cuenta</p>
+        </div>
+      </div>
+      <div class="fast-badge">⚡ Entrega < 5 min</div>
+    </div>
+
+    <div class="bcv-bar" id="bcvBar">🏦 Cargando tasa oficial del BCV...</div>
+
+    <div class="delivery-info">
+      ⚡ <strong>Una vez realices tu pago y envíes el capture</strong>, te enviamos el correo y contraseña de tu cuenta <strong>CapCut Pro</strong> en menos de <strong>5 minutos</strong>.
+    </div>
+
+    <div id="formSection">
+      <div class="field">
+        <label for="nombre">Nombre y Apellido</label>
+        <input type="text" id="nombre" placeholder="Ej: María Pérez" autocomplete="name" />
+      </div>
+
+      <div class="field">
+        <label for="whatsapp">Número de WhatsApp</label>
+        <input type="tel" id="whatsapp" placeholder="Ej: 584141234567" autocomplete="tel" onfocus="precalentarServidor(false)" />
+      </div>
+
+      <div class="field">
+        <label>Plan disponible</label>
+        <div class="single-plan">
+          <div class="single-plan-left">
+            <strong>🎬 CapCut Pro — 1 Mes</strong>
+            <small>Cuenta con correo y clave incluidos (30 días)</small>
+          </div>
+          <div class="single-plan-right">
+            <span class="plan-usd">$4.50</span>
+            <span class="plan-bs" id="bsPlan1">Cargando...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div><span>Fecha de inicio</span><strong id="sumInicio">--</strong></div>
+        <div><span>Fecha de vencimiento</span><strong id="sumFin">--</strong></div>
+        <div><span>Monto en Dólares</span><strong id="sumUsd" style="color:#f3ba2f;">$4.50 USD</strong></div>
+        <div><span>Monto en Bs (BCV)</span><strong id="sumBs" style="color:#00e5ff;">--</strong></div>
+      </div>
+
+      <div id="errorMsg" class="error-msg hidden"></div>
+
+      <!-- PASO 1: GUARDAR DATOS AL INSTANTE -->
+      <button type="button" class="btn btn-primary" id="btnGuardar" onclick="guardarDatosCliente()">
+        💾 Guardar datos y ver métodos de pago
+      </button>
+
+      <!-- PASO 2: ELEGIR MÉTODO DE PAGO -->
+      <div id="savedSection" class="saved-box hidden">
+        <h3>✅ ¡Registro guardado con éxito!</h3>
+        <p id="savedText">Elige tu método de pago. Una vez canceles y envíes tu capture, te entregamos tu cuenta CapCut Pro en menos de 5 minutos:</p>
+
+        <button type="button" class="btn btn-pm" onclick="mostrarMetodo('pagomovil')">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zm-5 3c-.83 0-1.5-.67-1.5-1.5S11.17 19 12 19s1.5.67 1.5 1.5S12.83 22 12 22z"/></svg>
+          Ver datos de Pago Móvil (Bs)
+        </button>
+
+        <button type="button" class="btn btn-binance" onclick="mostrarMetodo('binance')">
+          <svg viewBox="0 0 126.61 126.61" fill="currentColor">
+            <polygon points="38.73,53.2 63.3,28.63 87.88,53.21 102.18,38.91 63.3,0 24.43,38.88"/>
+            <rect x="4.19" y="53.2" width="20.22" height="20.22" transform="translate(-40.57 28.63) rotate(-45)"/>
+            <polygon points="38.73,73.41 63.3,97.98 87.88,73.4 102.19,87.7 63.3,126.61 24.43,87.73"/>
+            <rect x="102.2" y="53.2" width="20.22" height="20.22" transform="translate(-11.94 97.94) rotate(-45)"/>
+            <polygon points="77.83,63.3 63.3,48.77 52.58,59.49 51.34,60.73 48.78,63.29 63.3,77.82 77.83,63.3"/>
+          </svg>
+          Ver datos de Binance ($)
+        </button>
+
+        <button type="button" class="btn btn-paypal" onclick="mostrarMetodo('paypal')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/>
+          </svg>
+          Ver datos de PayPal ($)
+        </button>
+
+        <a href="#" target="_blank" class="fix-link" id="waCorregir">¿Te equivocaste en algún dato? Avísanos por WhatsApp</a>
+      </div>
+
+      <!-- TARJETA 1: PAGO MÓVIL -->
+      <div id="cardPagoMovil" class="pay-card hidden">
+        <div class="pay-title">📲 Datos de Pago Móvil (Bs)</div>
+
+        <div class="copy-row">
+          <div><small>Banco</small><strong>BANESCO (0134)</strong></div>
+          <button type="button" class="copy-btn" onclick="copiarTexto('0134', this)">Copiar</button>
+        </div>
+
+        <div class="copy-row">
+          <div><small>Cédula</small><strong>18-440-290</strong></div>
+          <button type="button" class="copy-btn" onclick="copiarTexto('18440290', this)">Copiar</button>
+        </div>
+
+        <div class="copy-row">
+          <div><small>Teléfono</small><strong>0414-311-5685</strong></div>
+          <button type="button" class="copy-btn" onclick="copiarTexto('04143115685', this)">Copiar</button>
+        </div>
+
+        <div class="copy-row">
+          <div><small>Monto exacto (Tasa BCV)</small><strong id="pmMonto">--</strong></div>
+          <button type="button" class="copy-btn" onclick="copiarMontoBs(this)">Copiar</button>
+        </div>
+
+        <button type="button" class="copy-all-btn" onclick="copiarTodoPM(this)">📋 Copiar todos los datos</button>
+
+        <div class="warning-box">
+          ⚠️ PASO FINAL OBLIGATORIO: Realiza tu Pago Móvil y adjunta aquí el capture para activar el botón de WhatsApp. En menos de 5 minutos te enviamos tu cuenta.
+        </div>
+
+        <input type="file" id="filePM" accept="image/*" class="hidden" onchange="manejarCapture(this, 'pm')" />
+        <label for="filePM" class="upload-box" id="uploadBoxPM">
+          <div id="uploadEmptyPM" class="upload-empty">
+            <span class="upload-empty-icon">📸</span>
+            <strong>Toca aquí para adjuntar tu comprobante</strong>
+            <small>Requerido para activar el envío a WhatsApp</small>
+          </div>
+          <div id="uploadPreviewPM" class="upload-preview hidden">
+            <img id="imgPreviewPM" src="" alt="Comprobante" />
+            <div class="upload-ok-text">
+              <strong>✅ Comprobante cargado</strong>
+              <small id="fileNamePM">Listo para enviar (toca si deseas cambiarlo)</small>
+            </div>
+          </div>
+        </label>
+        <div id="uploadErrPM" class="upload-err hidden"></div>
+
+        <a href="#" target="_blank" class="btn btn-whatsapp-locked" id="waPagoMovil" onclick="return validarEnvioWA(event, 'pm')">
+          🔒 Adjunta tu capture para activar WhatsApp
+        </a>
+        <span id="waNotePM" class="wa-note hidden">📲 Al abrir WhatsApp, recuerda adjuntar también esta foto en el chat.</span>
+      </div>
+
+      <!-- TARJETA 2: BINANCE -->
+      <div id="cardBinance" class="pay-card binance-card hidden">
+        <div class="pay-title">
+          <svg viewBox="0 0 126.61 126.61" fill="currentColor">
+            <polygon points="38.73,53.2 63.3,28.63 87.88,53.21 102.18,38.91 63.3,0 24.43,38.88"/>
+            <rect x="4.19" y="53.2" width="20.22" height="20.22" transform="translate(-40.57 28.63) rotate(-45)"/>
+            <polygon points="38.73,73.41 63.3,97.98 87.88,73.4 102.19,87.7 63.3,126.61 24.43,87.73"/>
+            <rect x="102.2" y="53.2" width="20.22" height="20.22" transform="translate(-11.94 97.94) rotate(-45)"/>
+            <polygon points="77.83,63.3 63.3,48.77 52.58,59.49 51.34,60.73 48.78,63.29 63.3,77.82 77.83,63.3"/>
+          </svg>
+          Datos de Binance Pay ($)
+        </div>
+
+        <div class="copy-row">
+          <div><small>Correo de Binance</small><strong>alexander1x33@gmail.com</strong></div>
+          <button type="button" class="copy-btn" onclick="copiarTexto('alexander1x33@gmail.com', this)">Copiar</button>
+        </div>
+
+        <div class="copy-row">
+          <div><small>Monto exacto</small><strong id="binanceMonto">$4.50 USDT</strong></div>
+          <button type="button" class="copy-btn" onclick="copiarMontoUsd(this)">Copiar</button>
+        </div>
+
+        <div class="warning-box">
+          ⚠️ PASO FINAL OBLIGATORIO: Envía tu pago por Binance Pay y adjunta aquí el capture para activar el botón de WhatsApp. En menos de 5 minutos te enviamos tu cuenta.
+        </div>
+
+        <input type="file" id="fileBin" accept="image/*" class="hidden" onchange="manejarCapture(this, 'bin')" />
+        <label for="fileBin" class="upload-box" id="uploadBoxBin">
+          <div id="uploadEmptyBin" class="upload-empty">
+            <span class="upload-empty-icon">📸</span>
+            <strong>Toca aquí para adjuntar tu comprobante</strong>
+            <small>Requerido para activar el envío a WhatsApp</small>
+          </div>
+          <div id="uploadPreviewBin" class="upload-preview hidden">
+            <img id="imgPreviewBin" src="" alt="Comprobante" />
+            <div class="upload-ok-text">
+              <strong>✅ Comprobante cargado</strong>
+              <small id="fileNameBin">Listo para enviar (toca si deseas cambiarlo)</small>
+            </div>
+          </div>
+        </label>
+        <div id="uploadErrBin" class="upload-err hidden"></div>
+
+        <a href="#" target="_blank" class="btn btn-whatsapp-locked" id="waBinance" onclick="return validarEnvioWA(event, 'bin')">
+          🔒 Adjunta tu capture para activar WhatsApp
+        </a>
+        <span id="waNoteBin" class="wa-note hidden">📲 Al abrir WhatsApp, recuerda adjuntar también esta foto en el chat.</span>
+      </div>
+
+      <!-- TARJETA 3: PAYPAL -->
+      <div id="cardPaypal" class="pay-card paypal-card hidden">
+        <div class="pay-title">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/>
+          </svg>
+          Datos de PayPal ($)
+        </div>
+
+        <div class="copy-row">
+          <div><small>Correo de PayPal</small><strong>alexander1x33@gmail.com</strong></div>
+          <button type="button" class="copy-btn" onclick="copiarTexto('alexander1x33@gmail.com', this)">Copiar</button>
+        </div>
+
+        <div class="copy-row">
+          <div><small>Monto exacto</small><strong id="paypalMonto">$4.50 USD</strong></div>
+          <button type="button" class="copy-btn" onclick="copiarMontoUsd(this)">Copiar</button>
+        </div>
+
+        <div class="warning-box">
+          ⚠️ PASO FINAL OBLIGATORIO: Realiza tu pago por PayPal y adjunta aquí el capture para activar el botón de WhatsApp. En menos de 5 minutos te enviamos tu cuenta.
+        </div>
+
+        <input type="file" id="filePay" accept="image/*" class="hidden" onchange="manejarCapture(this, 'pay')" />
+        <label for="filePay" class="upload-box" id="uploadBoxPay">
+          <div id="uploadEmptyPay" class="upload-empty">
+            <span class="upload-empty-icon">📸</span>
+            <strong>Toca aquí para adjuntar tu comprobante</strong>
+            <small>Requerido para activar el envío a WhatsApp</small>
+          </div>
+          <div id="uploadPreviewPay" class="upload-preview hidden">
+            <img id="imgPreviewPay" src="" alt="Comprobante" />
+            <div class="upload-ok-text">
+              <strong>✅ Comprobante cargado</strong>
+              <small id="fileNamePay">Listo para enviar (toca si deseas cambiarlo)</small>
+            </div>
+          </div>
+        </label>
+        <div id="uploadErrPay" class="upload-err hidden"></div>
+
+        <a href="#" target="_blank" class="btn btn-whatsapp-locked" id="waPaypal" onclick="return validarEnvioWA(event, 'pay')">
+          🔒 Adjunta tu capture para activar WhatsApp
+        </a>
+        <span id="waNotePay" class="wa-note hidden">📲 Al abrir WhatsApp, recuerda adjuntar también esta foto en el chat.</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLu7e_Bo8P8Dnq0aSwiSDJe43mdxdQfSYQ5QXpNZ6KQb5voGG6lggB0v836Kq41VEk/exec';
+    var TU_WHATSAPP = '584163080821';
+    var CORREO_PAGOS = 'alexander1x33@gmail.com';
+    var STORAGE_KEY = 'capcut_reg_bloqueo_v1';
+    var HORAS_BLOQUEO = 12;
+
+    var params = new URLSearchParams(window.location.search);
+    var HOJA_ACTUAL = params.get('hoja') || 'CAPCUT';
+
+    if (params.get('nuevo') === '1') {
+      try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    }
+
+    var tasaBCV = 0;
+    var planActual = { plan: '1 mes', dias: 30, usd: 4.5 };
+    var datosCliente = { nombre: '', whatsapp: '' };
+    var yaGuardado = false;
+    var ultimoPrecalentamiento = 0;
+    var payloadPendienteBeacon = null;
+
+    var capturasCargadas = { pm: false, bin: false, pay: false };
+    var urlsPreview = { pm: '', bin: '', pay: '' };
+
+    var MAPA_UI = {
+      pm: {
+        box: 'uploadBoxPM', empty: 'uploadEmptyPM', preview: 'uploadPreviewPM',
+        img: 'imgPreviewPM', name: 'fileNamePM', err: 'uploadErrPM',
+        btn: 'waPagoMovil', note: 'waNotePM',
+        textoActivo: '💬 Ya pagué — Enviar capture por WhatsApp'
+      },
+      bin: {
+        box: 'uploadBoxBin', empty: 'uploadEmptyBin', preview: 'uploadPreviewBin',
+        img: 'imgPreviewBin', name: 'fileNameBin', err: 'uploadErrBin',
+        btn: 'waBinance', note: 'waNoteBin',
+        textoActivo: '💬 Ya pagué por Binance — Enviar capture'
+      },
+      pay: {
+        box: 'uploadBoxPay', empty: 'uploadEmptyPay', preview: 'uploadPreviewPay',
+        img: 'imgPreviewPay', name: 'fileNamePay', err: 'uploadErrPay',
+        btn: 'waPaypal', note: 'waNotePay',
+        textoActivo: '💬 Ya pagué por PayPal — Enviar capture'
+      }
+    };
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+    function formatDMY(d) { return pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear(); }
+    function formatISO(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+
+    function precalentarServidor(forzar) {
+      var ahora = Date.now();
+      if (!forzar && (ahora - ultimoPrecalentamiento) < 40000) return;
+      ultimoPrecalentamiento = ahora;
+      fetch(SCRIPT_URL + '?modo=cliente&hoja=' + encodeURIComponent(HOJA_ACTUAL) + '&_w=' + ahora, {
+        method: 'GET',
+        cache: 'no-store'
+      }).catch(function() {});
+    }
+
+    function calcularBsNumero(usd) {
+      if (!tasaBCV || tasaBCV <= 0) return '';
+      return (usd * tasaBCV).toFixed(2);
+    }
+
+    function calcularBsTexto(usd) {
+      var num = calcularBsNumero(usd);
+      if (!num) return 'Consultar tasa';
+      return num.replace('.', ',') + ' Bs';
+    }
+
+    function cargarTasaBCV() {
+      fetch('https://ve.dolarapi.com/v1/dolares/oficial')
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          var val = Number(data.promedio || data.venta || data.compra || 0);
+          if (val > 0) {
+            tasaBCV = val;
+            document.getElementById('bcvBar').textContent = '🏦 Tasa Oficial BCV hoy: ' + tasaBCV.toFixed(2).replace('.', ',') + ' Bs';
+            actualizarResumen();
+          } else {
+            throw new Error('Sin tasa');
+          }
+        })
+        .catch(function() {
+          document.getElementById('bcvBar').textContent = '🏦 Tasa BCV no disponible ahora (puedes pagar en $ o consultar por WhatsApp)';
+          actualizarResumen();
+        });
+    }
+
+    function actualizarResumen() {
+      var hoy = new Date();
+      var fin = new Date(hoy.getTime());
+      fin.setDate(fin.getDate() + planActual.dias);
+
+      var usdTxt = planActual.usd.toFixed(2);
+      var bsTxt = calcularBsTexto(planActual.usd);
+
+      document.getElementById('bsPlan1').textContent = tasaBCV > 0 ? bsTxt : 'Tasa BCV';
+      document.getElementById('sumInicio').textContent = formatDMY(hoy);
+      document.getElementById('sumFin').textContent = formatDMY(fin);
+      document.getElementById('sumUsd').textContent = '$' + usdTxt + ' USD';
+      document.getElementById('sumBs').textContent = bsTxt;
+
+      document.getElementById('pmMonto').textContent = bsTxt;
+      document.getElementById('binanceMonto').textContent = '$' + usdTxt + ' USDT';
+      document.getElementById('paypalMonto').textContent = '$' + usdTxt + ' USD';
+
+      if (yaGuardado) {
+        document.getElementById('savedText').textContent =
+          'Plan CapCut Pro (1 mes — $' + usdTxt + ' / ' + bsTxt + '). Elige cómo pagar y en menos de 5 minutos tras recibir tu capture te enviamos tu cuenta y contraseña:';
+        actualizarEnlacesWhatsApp();
+      }
+    }
+
+    function actualizarEnlacesWhatsApp() {
+      var usdTxt = planActual.usd.toFixed(2);
+      var montoBs = calcularBsTexto(planActual.usd);
+      var msgPM = 'Hola, soy ' + datosCliente.nombre + '. Ya realicé el Pago Móvil de ' + montoBs + ' ($' + usdTxt + ' a tasa BCV) por mi cuenta CapCut Pro (1 mes). Aquí envío mi capture para recibir el acceso.';
+      var msgBin = 'Hola, soy ' + datosCliente.nombre + '. Ya realicé el pago por Binance de $' + usdTxt + ' USDT al correo ' + CORREO_PAGOS + ' por mi cuenta CapCut Pro (1 mes). Aquí envío mi capture para recibir el acceso.';
+      var msgPay = 'Hola, soy ' + datosCliente.nombre + '. Ya realicé el pago por PayPal de $' + usdTxt + ' USD al correo ' + CORREO_PAGOS + ' por mi cuenta CapCut Pro (1 mes). Aquí envío mi capture para recibir el acceso.';
+      var msgFix = 'Hola, soy ' + datosCliente.nombre + '. Me equivoqué en un dato al registrarme para CapCut Pro. ¿Me ayudas a corregirlo?';
+
+      document.getElementById('waPagoMovil').href = 'https://wa.me/' + TU_WHATSAPP + '?text=' + encodeURIComponent(msgPM);
+      document.getElementById('waBinance').href = 'https://wa.me/' + TU_WHATSAPP + '?text=' + encodeURIComponent(msgBin);
+      document.getElementById('waPaypal').href = 'https://wa.me/' + TU_WHATSAPP + '?text=' + encodeURIComponent(msgPay);
+      document.getElementById('waCorregir').href = 'https://wa.me/' + TU_WHATSAPP + '?text=' + encodeURIComponent(msgFix);
+    }
+
+    function manejarCapture(input, tipo) {
+      var ui = MAPA_UI[tipo];
+      if (!ui) return;
+
+      var file = input.files && input.files[0];
+      if (!file) return;
+
+      var errEl = document.getElementById(ui.err);
+      var boxEl = document.getElementById(ui.box);
+
+      if (file.type && file.type.indexOf('image/') !== 0) {
+        errEl.textContent = '⚠️ Por favor selecciona una imagen (capture de pago).';
+        errEl.classList.remove('hidden');
+        boxEl.classList.add('need-file');
+        return;
+      }
+
+      errEl.classList.add('hidden');
+      boxEl.classList.remove('need-file');
+      boxEl.classList.add('has-file');
+
+      var imgEl = document.getElementById(ui.img);
+      try {
+        if (urlsPreview[tipo] && window.URL && window.URL.revokeObjectURL) {
+          window.URL.revokeObjectURL(urlsPreview[tipo]);
+        }
+        if (window.URL && window.URL.createObjectURL) {
+          urlsPreview[tipo] = window.URL.createObjectURL(file);
+          imgEl.src = urlsPreview[tipo];
+          imgEl.classList.remove('hidden');
+        } else {
+          imgEl.classList.add('hidden');
+        }
+      } catch (e) {
+        imgEl.classList.add('hidden');
+      }
+
+      var nombreArchivo = file.name || 'Comprobante';
+      if (nombreArchivo.length > 26) nombreArchivo = nombreArchivo.slice(0, 23) + '...';
+      document.getElementById(ui.name).textContent = nombreArchivo + ' • Toca para cambiar';
+      document.getElementById(ui.empty).classList.add('hidden');
+      document.getElementById(ui.preview).classList.remove('hidden');
+
+      capturasCargadas[tipo] = true;
+
+      var btnWA = document.getElementById(ui.btn);
+      btnWA.classList.remove('btn-whatsapp-locked');
+      btnWA.classList.add('btn-whatsapp');
+      btnWA.textContent = ui.textoActivo;
+      document.getElementById(ui.note).classList.remove('hidden');
+    }
+
+    function validarEnvioWA(e, tipo) {
+      if (capturasCargadas[tipo]) {
+        actualizarEnlacesWhatsApp();
+        return true;
+      }
+      e.preventDefault();
+      var ui = MAPA_UI[tipo];
+      if (ui) {
+        var boxEl = document.getElementById(ui.box);
+        var errEl = document.getElementById(ui.err);
+        boxEl.classList.add('need-file');
+        errEl.textContent = '⚠️ Primero debes subir la foto de tu comprobante arriba.';
+        errEl.classList.remove('hidden');
+        boxEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return false;
+    }
+
+    function bloquearFormularioUI() {
+      yaGuardado = true;
+      document.getElementById('nombre').value = datosCliente.nombre;
+      document.getElementById('whatsapp').value = datosCliente.whatsapp;
+      document.getElementById('nombre').disabled = true;
+      document.getElementById('whatsapp').disabled = true;
+      document.getElementById('btnGuardar').classList.add('hidden');
+      document.getElementById('savedSection').classList.remove('hidden');
+      actualizarResumen();
+    }
+
+    function verificarBloqueoPrevio() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        var reg = JSON.parse(raw);
+        if (reg && reg.expira && Date.now() < reg.expira) {
+          datosCliente = reg.datosCliente || datosCliente;
+          bloquearFormularioUI();
+        } else {
+          localStorage.removeItem(STORAGE_KEY);
+        }
+      } catch (e) {}
+    }
+
+    function mostrarError(msg) {
+      var el = document.getElementById('errorMsg');
+      el.textContent = msg;
+      el.classList.remove('hidden');
+    }
+
+    function ocultarError() {
+      document.getElementById('errorMsg').classList.add('hidden');
+    }
+
+    function enviarRegistroConReintento(payloadStr, intento) {
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        redirect: 'follow',
+        cache: 'no-store',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: payloadStr
+      })
+      .then(function(res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        payloadPendienteBeacon = null;
+      })
+      .catch(function() {
+        if (intento < 2) {
+          setTimeout(function() {
+            enviarRegistroConReintento(payloadStr, intento + 1);
+          }, 1500);
+        }
+      });
+    }
+
+    window.addEventListener('pagehide', function() {
+      if (payloadPendienteBeacon && navigator.sendBeacon) {
+        try {
+          var blob = new Blob([payloadPendienteBeacon], { type: 'text/plain;charset=utf-8' });
+          navigator.sendBeacon(SCRIPT_URL, blob);
+          payloadPendienteBeacon = null;
+        } catch (e) {}
+      }
+    });
+
+    function guardarDatosCliente() {
+      if (yaGuardado) return;
+
+      var nombre = document.getElementById('nombre').value.trim();
+      var whatsapp = document.getElementById('whatsapp').value.trim();
+
+      if (!nombre || !whatsapp) {
+        mostrarError('Por favor completa tu nombre y número de WhatsApp.');
+        return;
+      }
+      ocultarError();
+
+      datosCliente = { nombre: nombre, whatsapp: whatsapp };
+
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          expira: Date.now() + (HORAS_BLOQUEO * 60 * 60 * 1000),
+          datosCliente: datosCliente
+        }));
+      } catch (e) {}
+
+      bloquearFormularioUI();
+      document.getElementById('savedSection').scrollIntoView({ behavior: 'smooth' });
+
+      var payloadStr = JSON.stringify({
+        accion: 'guardar',
+        hoja: HOJA_ACTUAL,
+        esCliente: true,
+        datos: {
+          nombre: nombre,
+          whatsapp: whatsapp,
+          correo: '',
+          plan: planActual.plan,
+          inicio: formatISO(new Date())
+        }
+      });
+
+      payloadPendienteBeacon = payloadStr;
+      enviarRegistroConReintento(payloadStr, 1);
+    }
+
+    function mostrarMetodo(tipo) {
+      document.getElementById('cardPagoMovil').classList.add('hidden');
+      document.getElementById('cardBinance').classList.add('hidden');
+      document.getElementById('cardPaypal').classList.add('hidden');
+
+      var targetId = tipo === 'pagomovil' ? 'cardPagoMovil' : (tipo === 'binance' ? 'cardBinance' : 'cardPaypal');
+      var card = document.getElementById(targetId);
+      card.classList.remove('hidden');
+      card.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function copiarTexto(texto, btn) {
+      function marcar() {
+        var orig = btn.textContent;
+        btn.textContent = '✓ Copiado';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.textContent = orig;
+          btn.classList.remove('copied');
+        }, 1500);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(texto).then(marcar).catch(function() { fallbackCopy(texto, marcar); });
+      } else {
+        fallbackCopy(texto, marcar);
+      }
+    }
+
+    function copiarMontoBs(btn) {
+      copiarTexto(calcularBsNumero(planActual.usd) || 'Consultar', btn);
+    }
+
+    function copiarMontoUsd(btn) {
+      copiarTexto(planActual.usd.toFixed(2), btn);
+    }
+
+    function copiarTodoPM(btn) {
+      var texto = 'Pago Móvil\nBanco: BANESCO (0134)\nCédula: 18440290\nTeléfono: 04143115685\nMonto: ' + calcularBsTexto(planActual.usd);
+      copiarTexto(texto, btn);
+    }
+
+    function fallbackCopy(texto, cb) {
+      var ta = document.createElement('textarea');
+      ta.value = texto;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      cb();
+    }
+
+    // Inicializar
+    verificarBloqueoPrevio();
+    actualizarResumen();
+    cargarTasaBCV();
+    precalentarServidor(true);
+  </script>
+</body>
+</html>
