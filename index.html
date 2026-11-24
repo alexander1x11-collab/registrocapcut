@@ -121,6 +121,7 @@
     }
     .field { margin-bottom: 14px; }
     label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #e2e8f0; }
+    .wa-hint { font-size: 11.5px; color: #94a3b8; margin-top: 5px; display: block; line-height: 1.35; }
     input {
       width: 100%; padding: 12px 14px; border-radius: 10px;
       border: 1px solid var(--border); background: var(--card-2);
@@ -229,66 +230,121 @@
       font-size: 12.5px; font-weight: 700; text-align: center;
       margin-bottom: 12px; line-height: 1.4;
     }
-    label.upload-box {
-      display: block;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.75);
-      border: 2px dashed #64748b;
+    .ref-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1.5px solid #475569;
       border-radius: 12px;
-      padding: 14px 12px;
-      text-align: center;
-      cursor: pointer;
+      padding: 12px;
       margin-bottom: 10px;
       transition: 0.2s;
     }
-    label.upload-box:active { transform: scale(0.99); }
-    label.upload-box.has-file {
-      border-style: solid;
+    .ref-box.valid {
       border-color: var(--success);
-      background: rgba(34, 197, 94, 0.1);
+      background: rgba(34, 197, 94, 0.08);
     }
-    label.upload-box.need-file {
+    .ref-box.invalid {
       border-color: var(--danger);
-      background: rgba(239, 68, 68, 0.12);
+      background: rgba(239, 68, 68, 0.1);
     }
-    .upload-empty-icon { font-size: 26px; display: block; margin-bottom: 4px; }
-    .upload-empty strong { display: block; font-size: 13.5px; color: #f8fafc; margin-bottom: 3px; }
-    .upload-empty small { display: block; font-size: 11.5px; color: #94a3b8; font-weight: 500; }
-    .upload-preview {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-align: left;
-    }
-    .upload-preview img {
-      width: 58px;
-      height: 58px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 1.5px solid var(--success);
-      background: #0f172a;
-      flex-shrink: 0;
-    }
-    .upload-ok-text strong { display: block; font-size: 13.5px; color: #86efac; margin-bottom: 2px; }
-    .upload-ok-text small { display: block; font-size: 11.5px; color: #cbd5e1; font-weight: 500; line-height: 1.3; }
-    .upload-err {
-      color: #fca5a5;
+    .ref-box label {
       font-size: 12.5px;
-      font-weight: 700;
-      text-align: center;
-      margin: -4px 0 10px;
+      color: #f8fafc;
+      margin-bottom: 6px;
+      display: block;
     }
-    .wa-note {
+    .ref-input {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      background: #090e1a;
+      border: 1.5px solid var(--border);
+      padding: 11px 12px;
+      text-transform: uppercase;
+    }
+    .ref-msg {
       display: block;
       text-align: center;
       font-size: 11.5px;
-      color: #86efac;
-      margin-top: 8px;
+      color: #94a3b8;
+      margin-top: 6px;
+      font-weight: 600;
       line-height: 1.35;
+    }
+    .ref-msg.ok { color: #86efac; }
+    .ref-msg.err { color: #fca5a5; }
+    .delivery-banner {
+      margin-top: 10px;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1.5px solid var(--success);
+      color: #dcfce7;
+      border-radius: 12px;
+      padding: 11px 12px;
+      font-size: 12.5px;
+      line-height: 1.45;
+      text-align: center;
     }
     .error-msg {
       color: #fca5a5; font-size: 13px; margin-bottom: 10px;
       text-align: center; font-weight: 600;
+    }
+    /* MODAL DE AVISO ANTES DE ABRIR WHATSAPP */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.84);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 9999;
+    }
+    .modal-card {
+      width: 100%;
+      max-width: 410px;
+      background: #1e293b;
+      border: 2px solid var(--success);
+      border-radius: 18px;
+      padding: 20px 18px;
+      text-align: center;
+      box-shadow: 0 22px 50px rgba(0,0,0,0.65);
+    }
+    .modal-icon {
+      font-size: 42px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .modal-card h3 {
+      color: #86efac;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .modal-invite-box {
+      background: rgba(34, 197, 94, 0.14);
+      border: 1px solid rgba(34, 197, 94, 0.45);
+      border-radius: 12px;
+      padding: 12px;
+      color: #f8fafc;
+      font-size: 13.5px;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+    .modal-sub {
+      color: #cbd5e1;
+      font-size: 12.5px;
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+    .modal-close-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #94a3b8;
+      background: none;
+      border: none;
+      text-decoration: underline;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -317,7 +373,7 @@
     <div class="bcv-bar" id="bcvBar">🏦 Cargando tasa oficial del BCV...</div>
 
     <div class="delivery-info">
-      ⚡ <strong>Una vez realices tu pago y envíes el capture</strong>, te enviamos el correo y contraseña de tu cuenta <strong>CapCut Pro</strong> en menos de <strong>5 minutos</strong>.
+      ⚡ <strong>Una vez realices tu pago y reportes los últimos 6 dígitos de tu referencia</strong>, te enviamos el correo y contraseña de tu cuenta <strong>CapCut Pro</strong> en menos de <strong>5 minutos</strong>.
     </div>
 
     <div id="formSection">
@@ -327,8 +383,16 @@
       </div>
 
       <div class="field">
-        <label for="whatsapp">Número de WhatsApp</label>
-        <input type="tel" id="whatsapp" placeholder="Ej: 584141234567" autocomplete="tel" onfocus="precalentarServidor(false)" />
+        <label for="whatsapp">Número de WhatsApp (con + y código de país)</label>
+        <input
+          type="tel"
+          id="whatsapp"
+          placeholder="Ej: +584143115685 o +34612345678"
+          autocomplete="tel"
+          onfocus="precalentarServidor(false)"
+          oninput="validarWhatsappEnVivo()"
+        />
+        <span class="wa-hint" id="waHint">Obligatorio: escribe el <strong>+</strong> y el código de tu país todo pegado, sin espacios ni guiones (Ej: <strong>+584143115685</strong>). No escribas 0414 ni 414 solo.</span>
       </div>
 
       <div class="field">
@@ -362,7 +426,7 @@
       <!-- PASO 2: ELEGIR MÉTODO DE PAGO -->
       <div id="savedSection" class="saved-box hidden">
         <h3>✅ ¡Registro guardado con éxito!</h3>
-        <p id="savedText">Elige tu método de pago. Una vez canceles y envíes tu capture, te entregamos tu cuenta CapCut Pro en menos de 5 minutos:</p>
+        <p id="savedText">Elige tu método de pago. Una vez canceles y escribas los últimos 6 dígitos de tu referencia, te entregamos tu cuenta CapCut Pro en menos de 5 minutos:</p>
 
         <button type="button" class="btn btn-pm" onclick="mostrarMetodo('pagomovil')">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zm-5 3c-.83 0-1.5-.67-1.5-1.5S11.17 19 12 19s1.5.67 1.5 1.5S12.83 22 12 22z"/></svg>
@@ -417,30 +481,30 @@
         <button type="button" class="copy-all-btn" onclick="copiarTodoPM(this)">📋 Copiar todos los datos</button>
 
         <div class="warning-box">
-          ⚠️ PASO FINAL OBLIGATORIO: Realiza tu Pago Móvil y adjunta aquí el capture para activar el botón de WhatsApp. En menos de 5 minutos te enviamos tu cuenta.
+          ⚠️ PASO FINAL OBLIGATORIO: Realiza tu Pago Móvil y escribe abajo los <strong>últimos 6 dígitos de la referencia</strong> para confirmar tu pago.
         </div>
 
-        <input type="file" id="filePM" accept="image/*" class="hidden" onchange="manejarCapture(this, 'pm')" />
-        <label for="filePM" class="upload-box" id="uploadBoxPM">
-          <div id="uploadEmptyPM" class="upload-empty">
-            <span class="upload-empty-icon">📸</span>
-            <strong>Toca aquí para adjuntar tu comprobante</strong>
-            <small>Requerido para activar el envío a WhatsApp</small>
-          </div>
-          <div id="uploadPreviewPM" class="upload-preview hidden">
-            <img id="imgPreviewPM" src="" alt="Comprobante" />
-            <div class="upload-ok-text">
-              <strong>✅ Comprobante cargado</strong>
-              <small id="fileNamePM">Listo para enviar (toca si deseas cambiarlo)</small>
-            </div>
-          </div>
-        </label>
-        <div id="uploadErrPM" class="upload-err hidden"></div>
+        <div class="ref-box" id="refBoxPM">
+          <label for="refPM">🔢 Últimos 6 dígitos de referencia del Pago Móvil</label>
+          <input
+            type="tel"
+            inputmode="numeric"
+            maxlength="6"
+            id="refPM"
+            class="ref-input"
+            placeholder="000000"
+            oninput="validarReferenciaEnVivo('pm')"
+          />
+          <span class="ref-msg" id="refMsgPM">Ingresa los últimos 6 números exactos de tu comprobante bancario.</span>
+        </div>
 
-        <a href="#" target="_blank" class="btn btn-whatsapp-locked" id="waPagoMovil" onclick="return validarEnvioWA(event, 'pm')">
-          🔒 Adjunta tu capture para activar WhatsApp
-        </a>
-        <span id="waNotePM" class="wa-note hidden">📲 Al abrir WhatsApp, recuerda adjuntar también esta foto en el chat.</span>
+        <button type="button" class="btn btn-whatsapp-locked" id="waPagoMovil" onclick="intentarConfirmarPago('pm')">
+          🔒 Escribe los 6 dígitos de referencia para continuar
+        </button>
+
+        <div id="deliveryBannerPM" class="delivery-banner hidden">
+          ✅ <strong>¡Pago reportado!</strong> En menos de <strong>5 minutos</strong> te enviamos el correo y contraseña de tu cuenta <strong>CapCut Pro</strong> a tu WhatsApp.
+        </div>
       </div>
 
       <!-- TARJETA 2: BINANCE -->
@@ -467,30 +531,29 @@
         </div>
 
         <div class="warning-box">
-          ⚠️ PASO FINAL OBLIGATORIO: Envía tu pago por Binance Pay y adjunta aquí el capture para activar el botón de WhatsApp. En menos de 5 minutos te enviamos tu cuenta.
+          ⚠️ PASO FINAL OBLIGATORIO: Envía tu pago por Binance Pay y escribe abajo los <strong>últimos 6 dígitos del ID de orden</strong> para confirmar.
         </div>
 
-        <input type="file" id="fileBin" accept="image/*" class="hidden" onchange="manejarCapture(this, 'bin')" />
-        <label for="fileBin" class="upload-box" id="uploadBoxBin">
-          <div id="uploadEmptyBin" class="upload-empty">
-            <span class="upload-empty-icon">📸</span>
-            <strong>Toca aquí para adjuntar tu comprobante</strong>
-            <small>Requerido para activar el envío a WhatsApp</small>
-          </div>
-          <div id="uploadPreviewBin" class="upload-preview hidden">
-            <img id="imgPreviewBin" src="" alt="Comprobante" />
-            <div class="upload-ok-text">
-              <strong>✅ Comprobante cargado</strong>
-              <small id="fileNameBin">Listo para enviar (toca si deseas cambiarlo)</small>
-            </div>
-          </div>
-        </label>
-        <div id="uploadErrBin" class="upload-err hidden"></div>
+        <div class="ref-box" id="refBoxBin">
+          <label for="refBin">🔢 Últimos 6 dígitos del ID de orden Binance</label>
+          <input
+            type="text"
+            maxlength="6"
+            id="refBin"
+            class="ref-input"
+            placeholder="000000"
+            oninput="validarReferenciaEnVivo('bin')"
+          />
+          <span class="ref-msg" id="refMsgBin">Ingresa los últimos 6 dígitos/caracteres del comprobante de Binance.</span>
+        </div>
 
-        <a href="#" target="_blank" class="btn btn-whatsapp-locked" id="waBinance" onclick="return validarEnvioWA(event, 'bin')">
-          🔒 Adjunta tu capture para activar WhatsApp
-        </a>
-        <span id="waNoteBin" class="wa-note hidden">📲 Al abrir WhatsApp, recuerda adjuntar también esta foto en el chat.</span>
+        <button type="button" class="btn btn-whatsapp-locked" id="waBinance" onclick="intentarConfirmarPago('bin')">
+          🔒 Escribe los 6 dígitos de referencia para continuar
+        </button>
+
+        <div id="deliveryBannerBin" class="delivery-banner hidden">
+          ✅ <strong>¡Pago reportado!</strong> En menos de <strong>5 minutos</strong> te enviamos el correo y contraseña de tu cuenta <strong>CapCut Pro</strong> a tu WhatsApp.
+        </div>
       </div>
 
       <!-- TARJETA 3: PAYPAL -->
@@ -513,31 +576,46 @@
         </div>
 
         <div class="warning-box">
-          ⚠️ PASO FINAL OBLIGATORIO: Realiza tu pago por PayPal y adjunta aquí el capture para activar el botón de WhatsApp. En menos de 5 minutos te enviamos tu cuenta.
+          ⚠️ PASO FINAL OBLIGATORIO: Realiza tu pago por PayPal y escribe abajo los <strong>últimos 6 dígitos/caracteres del ID de transacción</strong>.
         </div>
 
-        <input type="file" id="filePay" accept="image/*" class="hidden" onchange="manejarCapture(this, 'pay')" />
-        <label for="filePay" class="upload-box" id="uploadBoxPay">
-          <div id="uploadEmptyPay" class="upload-empty">
-            <span class="upload-empty-icon">📸</span>
-            <strong>Toca aquí para adjuntar tu comprobante</strong>
-            <small>Requerido para activar el envío a WhatsApp</small>
-          </div>
-          <div id="uploadPreviewPay" class="upload-preview hidden">
-            <img id="imgPreviewPay" src="" alt="Comprobante" />
-            <div class="upload-ok-text">
-              <strong>✅ Comprobante cargado</strong>
-              <small id="fileNamePay">Listo para enviar (toca si deseas cambiarlo)</small>
-            </div>
-          </div>
-        </label>
-        <div id="uploadErrPay" class="upload-err hidden"></div>
+        <div class="ref-box" id="refBoxPay">
+          <label for="refPay">🔢 Últimos 6 dígitos del ID de transacción PayPal</label>
+          <input
+            type="text"
+            maxlength="6"
+            id="refPay"
+            class="ref-input"
+            placeholder="000000"
+            oninput="validarReferenciaEnVivo('pay')"
+          />
+          <span class="ref-msg" id="refMsgPay">Ingresa los últimos 6 caracteres del comprobante de PayPal.</span>
+        </div>
 
-        <a href="#" target="_blank" class="btn btn-whatsapp-locked" id="waPaypal" onclick="return validarEnvioWA(event, 'pay')">
-          🔒 Adjunta tu capture para activar WhatsApp
-        </a>
-        <span id="waNotePay" class="wa-note hidden">📲 Al abrir WhatsApp, recuerda adjuntar también esta foto en el chat.</span>
+        <button type="button" class="btn btn-whatsapp-locked" id="waPaypal" onclick="intentarConfirmarPago('pay')">
+          🔒 Escribe los 6 dígitos de referencia para continuar
+        </button>
+
+        <div id="deliveryBannerPay" class="delivery-banner hidden">
+          ✅ <strong>¡Pago reportado!</strong> En menos de <strong>5 minutos</strong> te enviamos el correo y contraseña de tu cuenta <strong>CapCut Pro</strong> a tu WhatsApp.
+        </div>
       </div>
+    </div>
+  </div>
+
+  <!-- VENTANA DE AVISO ANTES DE ABRIR WHATSAPP -->
+  <div id="confirmModal" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <span class="modal-icon">⚡</span>
+      <h3 id="modalTitle">¡Pago reportado!</h3>
+      <div class="modal-invite-box" id="modalInviteText">
+        ✅ <strong>¡Tu pago ha sido reportado!</strong> En menos de <strong>5 minutos</strong> te enviaremos el correo y contraseña de tu cuenta <strong>CapCut Pro</strong> por WhatsApp.
+      </div>
+      <p class="modal-sub">Ahora toca el botón verde para enviarnos tu número de referencia por WhatsApp y recibir tu acceso.</p>
+      <a href="#" target="_blank" class="btn btn-whatsapp" id="modalBtnWA" onclick="cerrarModalConfirmacion()">
+        💬 Entendido, abrir WhatsApp
+      </a>
+      <button type="button" class="modal-close-link" onclick="cerrarModalConfirmacion()">Cerrar aviso</button>
     </div>
   </div>
 
@@ -562,27 +640,33 @@
     var ultimoPrecalentamiento = 0;
     var payloadPendienteBeacon = null;
 
-    var capturasCargadas = { pm: false, bin: false, pay: false };
-    var urlsPreview = { pm: '', bin: '', pay: '' };
-
-    var MAPA_UI = {
+    var REF_UI = {
       pm: {
-        box: 'uploadBoxPM', empty: 'uploadEmptyPM', preview: 'uploadPreviewPM',
-        img: 'imgPreviewPM', name: 'fileNamePM', err: 'uploadErrPM',
-        btn: 'waPagoMovil', note: 'waNotePM',
-        textoActivo: '💬 Ya pagué — Enviar capture por WhatsApp'
+        box: 'refBoxPM',
+        input: 'refPM',
+        msg: 'refMsgPM',
+        btn: 'waPagoMovil',
+        banner: 'deliveryBannerPM',
+        soloNumeros: true,
+        textoActivo: '💬 Confirmar pago y abrir WhatsApp'
       },
       bin: {
-        box: 'uploadBoxBin', empty: 'uploadEmptyBin', preview: 'uploadPreviewBin',
-        img: 'imgPreviewBin', name: 'fileNameBin', err: 'uploadErrBin',
-        btn: 'waBinance', note: 'waNoteBin',
-        textoActivo: '💬 Ya pagué por Binance — Enviar capture'
+        box: 'refBoxBin',
+        input: 'refBin',
+        msg: 'refMsgBin',
+        btn: 'waBinance',
+        banner: 'deliveryBannerBin',
+        soloNumeros: false,
+        textoActivo: '💬 Confirmar pago Binance y abrir WhatsApp'
       },
       pay: {
-        box: 'uploadBoxPay', empty: 'uploadEmptyPay', preview: 'uploadPreviewPay',
-        img: 'imgPreviewPay', name: 'fileNamePay', err: 'uploadErrPay',
-        btn: 'waPaypal', note: 'waNotePay',
-        textoActivo: '💬 Ya pagué por PayPal — Enviar capture'
+        box: 'refBoxPay',
+        input: 'refPay',
+        msg: 'refMsgPay',
+        btn: 'waPaypal',
+        banner: 'deliveryBannerPay',
+        soloNumeros: false,
+        textoActivo: '💬 Confirmar pago PayPal y abrir WhatsApp'
       }
     };
 
@@ -650,94 +734,182 @@
 
       if (yaGuardado) {
         document.getElementById('savedText').textContent =
-          'Plan CapCut Pro (1 mes — $' + usdTxt + ' / ' + bsTxt + '). Elige cómo pagar y en menos de 5 minutos tras recibir tu capture te enviamos tu cuenta y contraseña:';
-        actualizarEnlacesWhatsApp();
+          'Plan CapCut Pro (1 mes — $' + usdTxt + ' / ' + bsTxt + '). Elige cómo pagar y en menos de 5 minutos tras reportar tu referencia te enviamos tu cuenta y contraseña:';
+        var msgFix = 'Hola, soy ' + datosCliente.nombre + '. Me equivoqué en un dato al registrarme para CapCut Pro. ¿Me ayudas a corregirlo?';
+        document.getElementById('waCorregir').href = 'https://wa.me/' + TU_WHATSAPP + '?text=' + encodeURIComponent(msgFix);
       }
     }
 
-    function actualizarEnlacesWhatsApp() {
-      var usdTxt = planActual.usd.toFixed(2);
-      var montoBs = calcularBsTexto(planActual.usd);
-      var msgPM = 'Hola, soy ' + datosCliente.nombre + '. Ya realicé el Pago Móvil de ' + montoBs + ' ($' + usdTxt + ' a tasa BCV) por mi cuenta CapCut Pro (1 mes). Aquí envío mi capture para recibir el acceso.';
-      var msgBin = 'Hola, soy ' + datosCliente.nombre + '. Ya realicé el pago por Binance de $' + usdTxt + ' USDT al correo ' + CORREO_PAGOS + ' por mi cuenta CapCut Pro (1 mes). Aquí envío mi capture para recibir el acceso.';
-      var msgPay = 'Hola, soy ' + datosCliente.nombre + '. Ya realicé el pago por PayPal de $' + usdTxt + ' USD al correo ' + CORREO_PAGOS + ' por mi cuenta CapCut Pro (1 mes). Aquí envío mi capture para recibir el acceso.';
-      var msgFix = 'Hola, soy ' + datosCliente.nombre + '. Me equivoqué en un dato al registrarme para CapCut Pro. ¿Me ayudas a corregirlo?';
+    // ================= VALIDACIÓN OBLIGATORIA DE WHATSAPP INTERNACIONAL =================
 
-      document.getElementById('waPagoMovil').href = 'https://wa.me/' + TU_WHATSAPP + '?text=' + encodeURIComponent(msgPM);
-      document.getElementById('waBinance').href = 'https://wa.me/' + TU_WHATSAPP + '?text=' + encodeURIComponent(msgBin);
-      document.getElementById('waPaypal').href = 'https://wa.me/' + TU_WHATSAPP + '?text=' + encodeURIComponent(msgPay);
-      document.getElementById('waCorregir').href = 'https://wa.me/' + TU_WHATSAPP + '?text=' + encodeURIComponent(msgFix);
+    function validarFormatoWhatsapp(valor) {
+      var limpio = String(valor || '').trim();
+      return /^\+[1-9]\d{7,14}$/.test(limpio);
     }
 
-    function manejarCapture(input, tipo) {
-      var ui = MAPA_UI[tipo];
-      if (!ui) return;
+    function validarWhatsappEnVivo() {
+      var input = document.getElementById('whatsapp');
+      var hint = document.getElementById('waHint');
+      var val = input.value.trim();
 
-      var file = input.files && input.files[0];
-      if (!file) return;
-
-      var errEl = document.getElementById(ui.err);
-      var boxEl = document.getElementById(ui.box);
-
-      if (file.type && file.type.indexOf('image/') !== 0) {
-        errEl.textContent = '⚠️ Por favor selecciona una imagen (capture de pago).';
-        errEl.classList.remove('hidden');
-        boxEl.classList.add('need-file');
+      if (!val) {
+        input.style.borderColor = 'var(--border)';
+        hint.style.color = '#94a3b8';
+        hint.innerHTML = 'Obligatorio: escribe el <strong>+</strong> y el código de tu país todo pegado, sin espacios ni guiones (Ej: <strong>+584143115685</strong>). No escribas 0414 ni 414 solo.';
         return;
       }
 
-      errEl.classList.add('hidden');
-      boxEl.classList.remove('need-file');
-      boxEl.classList.add('has-file');
-
-      var imgEl = document.getElementById(ui.img);
-      try {
-        if (urlsPreview[tipo] && window.URL && window.URL.revokeObjectURL) {
-          window.URL.revokeObjectURL(urlsPreview[tipo]);
-        }
-        if (window.URL && window.URL.createObjectURL) {
-          urlsPreview[tipo] = window.URL.createObjectURL(file);
-          imgEl.src = urlsPreview[tipo];
-          imgEl.classList.remove('hidden');
+      if (!validarFormatoWhatsapp(val)) {
+        input.style.borderColor = 'var(--danger)';
+        hint.style.color = '#fca5a5';
+        if (val.charAt(0) !== '+') {
+          hint.innerHTML = '⚠️ <strong>Falta el + y el código de país.</strong> No pongas 0414 ni 414 solo. Ejemplo: <strong>+584143115685</strong> (Venezuela) o <strong>+34612345678</strong> (fuera del país).';
         } else {
-          imgEl.classList.add('hidden');
+          hint.innerHTML = '⚠️ <strong>Formato inválido.</strong> Escribe el <strong>+</strong> y todos los números pegados sin espacios ni guiones (Ej: <strong>+584143115685</strong>).';
         }
-      } catch (e) {
-        imgEl.classList.add('hidden');
+      } else {
+        input.style.borderColor = 'var(--success)';
+        hint.style.color = '#86efac';
+        hint.textContent = '✅ Número con código de país válido.';
       }
-
-      var nombreArchivo = file.name || 'Comprobante';
-      if (nombreArchivo.length > 26) nombreArchivo = nombreArchivo.slice(0, 23) + '...';
-      document.getElementById(ui.name).textContent = nombreArchivo + ' • Toca para cambiar';
-      document.getElementById(ui.empty).classList.add('hidden');
-      document.getElementById(ui.preview).classList.remove('hidden');
-
-      capturasCargadas[tipo] = true;
-
-      var btnWA = document.getElementById(ui.btn);
-      btnWA.classList.remove('btn-whatsapp-locked');
-      btnWA.classList.add('btn-whatsapp');
-      btnWA.textContent = ui.textoActivo;
-      document.getElementById(ui.note).classList.remove('hidden');
     }
 
-    function validarEnvioWA(e, tipo) {
-      if (capturasCargadas[tipo]) {
-        actualizarEnlacesWhatsApp();
-        return true;
+    // ================= VALIDACIÓN DE REFERENCIA (6 ÚLTIMOS DÍGITOS) =================
+
+    function validarCodigoReferencia(valor, soloNumeros) {
+      var limpio = String(valor || '').trim().toUpperCase();
+      if (soloNumeros) {
+        if (!/^\d{6}$/.test(limpio)) {
+          return { ok: false, error: 'Debes escribir exactamente los últimos 6 números de tu referencia.' };
+        }
+      } else {
+        if (!/^[A-Z0-9]{6}$/.test(limpio)) {
+          return { ok: false, error: 'Debes escribir los últimos 6 dígitos/caracteres del ID de transacción.' };
+        }
       }
-      e.preventDefault();
-      var ui = MAPA_UI[tipo];
-      if (ui) {
-        var boxEl = document.getElementById(ui.box);
-        var errEl = document.getElementById(ui.err);
-        boxEl.classList.add('need-file');
-        errEl.textContent = '⚠️ Primero debes subir la foto de tu comprobante arriba.';
-        errEl.classList.remove('hidden');
-        boxEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Bloquea códigos falsos obvios (000000, 111111, 123456, 654321, etc.)
+      if (/^(.)\1{5}$/.test(limpio)) {
+        return { ok: false, error: '⚠️ Ese número no es válido. Ingresa los últimos 6 dígitos reales de tu comprobante.' };
       }
-      return false;
+      if (['123456', '654321', '012345', '543210'].indexOf(limpio) !== -1) {
+        return { ok: false, error: '⚠️ Ingresa los últimos 6 dígitos reales de tu comprobante, no una secuencia.' };
+      }
+
+      return { ok: true, ref: limpio };
     }
+
+    function validarReferenciaEnVivo(tipo) {
+      var ui = REF_UI[tipo];
+      if (!ui) return false;
+
+      var inputEl = document.getElementById(ui.input);
+      var boxEl = document.getElementById(ui.box);
+      var msgEl = document.getElementById(ui.msg);
+      var btnEl = document.getElementById(ui.btn);
+
+      if (ui.soloNumeros) {
+        inputEl.value = inputEl.value.replace(/\D/g, '').slice(0, 6);
+      } else {
+        inputEl.value = inputEl.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase().slice(0, 6);
+      }
+
+      var val = inputEl.value;
+      if (!val) {
+        boxEl.classList.remove('valid', 'invalid');
+        msgEl.className = 'ref-msg';
+        msgEl.textContent = ui.soloNumeros
+          ? 'Ingresa los últimos 6 números exactos de tu comprobante bancario.'
+          : 'Ingresa los últimos 6 dígitos/caracteres de tu comprobante.';
+        btnEl.classList.remove('btn-whatsapp');
+        btnEl.classList.add('btn-whatsapp-locked');
+        btnEl.textContent = '🔒 Escribe los 6 dígitos de referencia para continuar';
+        return false;
+      }
+
+      if (val.length < 6) {
+        boxEl.classList.remove('valid', 'invalid');
+        msgEl.className = 'ref-msg';
+        msgEl.textContent = 'Faltan ' + (6 - val.length) + ' dígitos...';
+        btnEl.classList.remove('btn-whatsapp');
+        btnEl.classList.add('btn-whatsapp-locked');
+        btnEl.textContent = '🔒 Escribe los 6 dígitos de referencia para continuar';
+        return false;
+      }
+
+      var check = validarCodigoReferencia(val, ui.soloNumeros);
+      if (!check.ok) {
+        boxEl.classList.remove('valid');
+        boxEl.classList.add('invalid');
+        msgEl.className = 'ref-msg err';
+        msgEl.textContent = check.error;
+        btnEl.classList.remove('btn-whatsapp');
+        btnEl.classList.add('btn-whatsapp-locked');
+        btnEl.textContent = '🔒 Referencia no válida';
+        return false;
+      }
+
+      boxEl.classList.remove('invalid');
+      boxEl.classList.add('valid');
+      msgEl.className = 'ref-msg ok';
+      msgEl.textContent = '✅ Referencia #' + check.ref + ' lista para enviar.';
+      btnEl.classList.remove('btn-whatsapp-locked');
+      btnEl.classList.add('btn-whatsapp');
+      btnEl.textContent = ui.textoActivo;
+      return true;
+    }
+
+    function construirEnlaceWhatsAppConRef(tipo, ref) {
+      var usdTxt = planActual.usd.toFixed(2);
+      var montoBs = calcularBsTexto(planActual.usd);
+      var msg = '';
+
+      if (tipo === 'pm') {
+        msg = 'Hola, soy ' + datosCliente.nombre + '. Ya realicé el Pago Móvil de ' + montoBs + ' ($' + usdTxt + ' a tasa BCV) por mi cuenta CapCut Pro (1 mes). Ref: #' + ref;
+      } else if (tipo === 'bin') {
+        msg = 'Hola, soy ' + datosCliente.nombre + '. Ya realicé el pago por Binance de $' + usdTxt + ' USDT al correo ' + CORREO_PAGOS + ' por mi cuenta CapCut Pro (1 mes). Ref: #' + ref;
+      } else {
+        msg = 'Hola, soy ' + datosCliente.nombre + '. Ya realicé el pago por PayPal de $' + usdTxt + ' USD al correo ' + CORREO_PAGOS + ' por mi cuenta CapCut Pro (1 mes). Ref: #' + ref;
+      }
+
+      return 'https://wa.me/' + TU_WHATSAPP + '?text=' + encodeURIComponent(msg);
+    }
+
+    function intentarConfirmarPago(tipo) {
+      var ui = REF_UI[tipo];
+      if (!ui) return;
+
+      var inputEl = document.getElementById(ui.input);
+      var boxEl = document.getElementById(ui.box);
+      var msgEl = document.getElementById(ui.msg);
+      var check = validarCodigoReferencia(inputEl.value, ui.soloNumeros);
+
+      if (!check.ok) {
+        boxEl.classList.remove('valid');
+        boxEl.classList.add('invalid');
+        msgEl.className = 'ref-msg err';
+        msgEl.textContent = check.error;
+        inputEl.focus();
+        return;
+      }
+
+      var enlaceWA = construirEnlaceWhatsAppConRef(tipo, check.ref);
+
+      // Muestra el aviso fijo en la tarjeta de pago
+      var bannerEl = document.getElementById(ui.banner);
+      bannerEl.classList.remove('hidden');
+
+      // Abre la ventana de confirmación antes de saltar a WhatsApp
+      document.getElementById('modalTitle').textContent = '¡Pago reportado (Ref: #' + check.ref + ')!';
+      document.getElementById('modalBtnWA').href = enlaceWA;
+      document.getElementById('confirmModal').classList.remove('hidden');
+    }
+
+    function cerrarModalConfirmacion() {
+      document.getElementById('confirmModal').classList.add('hidden');
+    }
+
+    // ================= GUARDADO Y BLOQUEO =================
 
     function bloquearFormularioUI() {
       yaGuardado = true;
@@ -813,6 +985,13 @@
 
       if (!nombre || !whatsapp) {
         mostrarError('Por favor completa tu nombre y número de WhatsApp.');
+        return;
+      }
+
+      if (!validarFormatoWhatsapp(whatsapp)) {
+        validarWhatsappEnVivo();
+        mostrarError('⚠️ WhatsApp inválido: escribe el + y el código de tu país todo pegado (Ej: +584143115685).');
+        document.getElementById('whatsapp').focus();
         return;
       }
       ocultarError();
