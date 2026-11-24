@@ -69,19 +69,21 @@
     }
     .brand { display: flex; align-items: center; gap: 10px; }
     .logo {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      border: 2px solid var(--primary);
+      background: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 900;
-      font-size: 18px;
-      color: #ffffff;
       flex-shrink: 0;
       box-shadow: 0 4px 12px rgba(0, 229, 255, 0.25);
+    }
+    .logo svg {
+      width: 28px;
+      height: 28px;
+      display: block;
     }
     .brand h1 { font-size: 18px; line-height: 1.2; }
     .brand p { font-size: 12px; color: var(--muted); }
@@ -293,12 +295,17 @@
 <body>
   <div class="container">
     <div class="top-banner-wrap">
-      <img src="bienvenida.jfif" alt="Creative Communi" class="brand-banner" />
+      <img src="https://canva-pro-registros.pages.dev/bienvenida.jfif" alt="Creative Communi" class="brand-banner" />
     </div>
 
     <div class="header">
       <div class="brand">
-        <div class="logo">CC</div>
+        <div class="logo" aria-label="CapCut">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 9.7V8.2C3.5 6.98 4.48 6 5.7 6H11.4C12.2 6 12.95 6.4 13.4 7.05L20.5 17.6" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.5 14.3V15.8C3.5 17.02 4.48 18 5.7 18H11.4C12.2 18 12.95 17.6 13.4 16.95L20.5 6.4" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div>
           <h1>Registro CapCut Pro</h1>
           <p>Completa tus datos para adquirir tu cuenta</p>
